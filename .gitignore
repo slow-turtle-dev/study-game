@@ -1,0 +1,36 @@
+# =========================
+# Unity generated folders
+# =========================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+MemoryCaptures/
+Crashes/
+
+# Visual Studio / VSCode
+.vs/
+.vscode/
+*.csproj
+*.sln
+*.suo
+*.unityproj
+
+# =========================
+# Unity specific files
+# =========================
+# Packages are partially version-controlled:
+#  - Packages/manifest.json is version-controlled
+#  - Packages/packages-lock.json is optional (but often included)
+#  - Packages/package-cache/ should be ignored
+[Dd]ebug/
+[Oo]utput/
+package-lock.json
+
+# =========================
+# OS generated files
+# =========================
+.DS_Store
+Thumbs.db
