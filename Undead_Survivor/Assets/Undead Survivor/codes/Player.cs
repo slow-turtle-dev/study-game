@@ -21,6 +21,10 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!GameManager.instance.isLive) {
+            return;
+        }
+        
         // inputVec.x = Input.GetAxis("Horizontal");
         // inputVec.y = Input.GetAxis("Vertical");
         inputVec.x = Input.GetAxisRaw("Horizontal");
@@ -38,6 +42,9 @@ public class Player : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (!GameManager.instance.isLive) {
+            return;
+        }
         // // 1. 힘을 준다
         // rigid.AddForce(inputVec);
 
@@ -61,6 +68,10 @@ public class Player : MonoBehaviour
 
     void LateUpdate()
     {
+        if (!GameManager.instance.isLive) {
+            return;
+        }
+        
         anim.SetFloat("Speed", inputVec.magnitude);
         
         if (inputVec.x != 0) {
