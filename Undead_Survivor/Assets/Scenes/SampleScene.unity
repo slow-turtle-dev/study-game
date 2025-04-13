@@ -20358,8 +20358,8 @@ MonoBehaviour:
   animCon:
   - {fileID: 9100000, guid: fdb6fd1ad626d2243abe0ff26d8a117c, type: 2}
   - {fileID: 22100000, guid: f079bf92f1aca8344a7c2e39213a6125, type: 2}
-  - {fileID: 9100000, guid: fdb6fd1ad626d2243abe0ff26d8a117c, type: 2}
-  - {fileID: 22100000, guid: f079bf92f1aca8344a7c2e39213a6125, type: 2}
+  - {fileID: 22100000, guid: c41f03e7ce14d42f09999cc2e202b527, type: 2}
+  - {fileID: 22100000, guid: 49212e15dec454d83be4861f31297671, type: 2}
 --- !u!114 &1499894911
 MonoBehaviour:
   m_ObjectHideFlags: 0
