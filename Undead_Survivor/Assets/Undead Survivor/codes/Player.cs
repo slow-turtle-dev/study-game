@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     public float speed;
     public Scanner scanner;
     public Hand[] hands;
+    public RuntimeAnimatorController[] animCon;
 
     Rigidbody2D rigid;
     SpriteRenderer spriter;
@@ -16,6 +17,21 @@ public class Player : MonoBehaviour
     void Start()
     {
         
+    }
+
+    void Awake()
+    {
+        rigid = GetComponent<Rigidbody2D>();
+        spriter = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
+        scanner = GetComponent<Scanner>();
+        hands = GetComponentsInChildren<Hand>(true);
+    }
+
+    void OnEnable()
+    {
+        speed *= Character.Speed;
+        anim.runtimeAnimatorController = animCon[GameManager.instance.playerId];
     }
 
     // Update is called once per frame
@@ -29,15 +45,6 @@ public class Player : MonoBehaviour
         // inputVec.y = Input.GetAxis("Vertical");
         inputVec.x = Input.GetAxisRaw("Horizontal");
         inputVec.y = Input.GetAxisRaw("Vertical");
-    }
-
-    void Awake()
-    {
-        rigid = GetComponent<Rigidbody2D>();
-        spriter = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
-        scanner = GetComponent<Scanner>();
-        hands = GetComponentsInChildren<Hand>(true);
     }
 
     void FixedUpdate()
