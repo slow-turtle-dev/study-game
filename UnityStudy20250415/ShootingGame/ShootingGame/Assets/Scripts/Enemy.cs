@@ -52,6 +52,14 @@ public class Enemy : MonoBehaviour
     // 1. 적이 다른 물체와 충돌했으니까.
     private void OnCollisionEnter(Collision other)
     {
+        // 에너미를 잡을 때마다 현재 점수를 표시하고 싶다.
+        // 1. 씬에서 ScoreManager 객체를 찾아오자.
+        GameObject smObject = GameObject.Find("ScoreManager");
+        // 2. ScoreManager 게임 오브젝트에서 얻어온다.
+        ScoreManager sm = smObject.GetComponent<ScoreManager>();
+        // 3. ScoreManager의 Get/Set 함수로 수정
+        sm.SetScore(sm.GetScore() + 1);
+
         // 2. 폭발 효과 공장에서 폭발 효과를 하나 만들어야 한다.
         GameObject explosion = Instantiate(explosionFactory);
 
