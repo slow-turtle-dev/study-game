@@ -53,12 +53,14 @@ public class Enemy : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         // 에너미를 잡을 때마다 현재 점수를 표시하고 싶다.
-        // 1. 씬에서 ScoreManager 객체를 찾아오자.
-        GameObject smObject = GameObject.Find("ScoreManager");
-        // 2. ScoreManager 게임 오브젝트에서 얻어온다.
-        ScoreManager sm = smObject.GetComponent<ScoreManager>();
-        // 3. ScoreManager의 Get/Set 함수로 수정
-        sm.SetScore(sm.GetScore() + 1);
+        ScoreManager.Instance.Score++;
+        // 싱글턴 + Get / Set 프로퍼티 사용으로 아래 로직은 필요 없어짐.
+        // // 1. 씬에서 ScoreManager 객체를 찾아오자.
+        // GameObject smObject = GameObject.Find("ScoreManager");
+        // // 2. ScoreManager 게임 오브젝트에서 얻어온다.
+        // ScoreManager sm = smObject.GetComponent<ScoreManager>();
+        // // 3. ScoreManager의 Get/Set 함수로 수정
+        // sm.SetScore(sm.GetScore() + 1);
 
         // 2. 폭발 효과 공장에서 폭발 효과를 하나 만들어야 한다.
         GameObject explosion = Instantiate(explosionFactory);
@@ -66,8 +68,19 @@ public class Enemy : MonoBehaviour
         // 3. 폭발 효과를 발생(위치) 시키고 싶다.
         explosion.transform.position = transform.position;
         
-        // 너 죽고
-        Destroy(other.gameObject);
+        // 만약 부딪힌 객체가 Bullet인 경우에는 비활성화시켜 탄창에 다시 넣어준다.
+        // 1. 만약 부딪힌 물체가 Bullet이라면
+        print(other.gameObject.name);
+        print(other.gameObject.name.Contains("Bullet"));
+        if (other.gameObject.name.Contains("Bullet")) {print(1);
+            // 2. 부딪힌 물체를 비활성화
+            other.gameObject.SetActive(false);
+        }
+        // 그렇지 않으면 제거
+        else {print(2);
+            Destroy(other.gameObject);
+        }
+
         // 나 죽자.
         Destroy(gameObject);
     }
