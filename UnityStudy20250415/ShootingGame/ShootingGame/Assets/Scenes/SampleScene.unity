@@ -423,28 +423,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 390759582}
-  - component: {fileID: 390759581}
   m_Layer: 0
-  m_Name: EnemyManager (3)
+  m_Name: SpawnPoint 2
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &390759581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 390759580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc608a6d7eec44b98a40a3fde0ef2b30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createTime: 1
-  enemyFactory: {fileID: 6958337179284724017, guid: 42141a8a9948e446c9677d7d1372ff97, type: 3}
 --- !u!4 &390759582
 Transform:
   m_ObjectHideFlags: 0
@@ -1185,6 +1170,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: bd16a121ccdf0674daacc3277d88c3c0, type: 3}
   m_PrefabInstance: {fileID: 510418739}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &863137683
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 863137684}
+  m_Layer: 0
+  m_Name: SpawnPoint 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &863137684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863137683}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &880981410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,7 +1379,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc608a6d7eec44b98a40a3fde0ef2b30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  createTime: 1
+  poolSize: 10
+  spawnPoints:
+  - {fileID: 2051113862}
+  - {fileID: 390759582}
+  - {fileID: 863137684}
+  - {fileID: 1398764328}
+  - {fileID: 1148394354}
+  minTime: 0.5
+  maxTime: 1.5
+  createTime: 3
   enemyFactory: {fileID: 6958337179284724017, guid: 42141a8a9948e446c9677d7d1372ff97, type: 3}
 --- !u!4 &952860631
 Transform:
@@ -1389,28 +1414,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1148394354}
-  - component: {fileID: 1148394353}
   m_Layer: 0
-  m_Name: EnemyManager (1)
+  m_Name: SpawnPoint 5
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1148394353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148394352}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc608a6d7eec44b98a40a3fde0ef2b30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createTime: 1
-  enemyFactory: {fileID: 6958337179284724017, guid: 42141a8a9948e446c9677d7d1372ff97, type: 3}
 --- !u!4 &1148394354
 Transform:
   m_ObjectHideFlags: 0
@@ -1456,9 +1466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScoreUI: {fileID: 77622105}
-  currentScore: 0
   bestScoreUI: {fileID: 438683521}
-  bestScore: 0
 --- !u!4 &1274187899
 Transform:
   m_ObjectHideFlags: 0
@@ -1483,28 +1491,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1398764328}
-  - component: {fileID: 1398764327}
   m_Layer: 0
-  m_Name: EnemyManager (2)
+  m_Name: SpawnPoint 4
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1398764327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398764326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc608a6d7eec44b98a40a3fde0ef2b30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createTime: 1
-  enemyFactory: {fileID: 6958337179284724017, guid: 42141a8a9948e446c9677d7d1372ff97, type: 3}
 --- !u!4 &1398764328
 Transform:
   m_ObjectHideFlags: 0
@@ -2004,6 +1997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletFactory: {fileID: 3152102461789733267, guid: 70a439e5c8dbd4d55b25c49465bc5bfa, type: 3}
+  poolSize: 10
   firePosition: {fileID: 698057050}
 --- !u!1 &2051113860
 GameObject:
@@ -2014,28 +2008,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2051113862}
-  - component: {fileID: 2051113861}
   m_Layer: 0
-  m_Name: EnemyManager (4)
+  m_Name: SpawnPoint 1
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2051113861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2051113860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc608a6d7eec44b98a40a3fde0ef2b30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  createTime: 1
-  enemyFactory: {fileID: 6958337179284724017, guid: 42141a8a9948e446c9677d7d1372ff97, type: 3}
 --- !u!4 &2051113862
 Transform:
   m_ObjectHideFlags: 0
@@ -2060,10 +2039,11 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 2043523791}
   - {fileID: 952860631}
-  - {fileID: 1148394354}
-  - {fileID: 1398764328}
-  - {fileID: 390759582}
   - {fileID: 2051113862}
+  - {fileID: 390759582}
+  - {fileID: 863137684}
+  - {fileID: 1398764328}
+  - {fileID: 1148394354}
   - {fileID: 880981414}
   - {fileID: 1713356593}
   - {fileID: 1993438223}

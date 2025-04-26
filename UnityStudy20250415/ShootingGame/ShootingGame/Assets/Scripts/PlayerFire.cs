@@ -40,10 +40,11 @@ public class PlayerFire : MonoBehaviour
         if (Input.GetButtonDown("Fire1")) {
             // 2. 탄창 안에 있는 총알들 중에서
             for (int i = 0; i < poolSize; i++) {
+                print("Fire: " + i);
                 // 3. 비활성화된 총알을
                 // 만약 총알이 비활성화됐다면
                 GameObject bullet = bulletObjectPool[i];
-                if (bullet.activeSelf == false) {
+                if (bullet != null && bullet.activeSelf == false) {
                     // 4. 총알을 발사하고 싶다(활성화시킨다).
                     bullet.SetActive(true);
                     // 총알을 위치시키기

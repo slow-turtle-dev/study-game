@@ -19,8 +19,7 @@ public class Enemy : MonoBehaviour
     // 폭발 공장 주소(외부에서 값을 넣어준다)
     public GameObject explosionFactory;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    void OnEnable()
     {
         // 0부터 9까지 10개의 값 중에 하나를 랜덤으로 가져온다.
         int randValue = UnityEngine.Random.Range(0, 10);
@@ -37,6 +36,10 @@ public class Enemy : MonoBehaviour
         else {
             dir = Vector3.down;
         }
+    }
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
@@ -72,17 +75,18 @@ public class Enemy : MonoBehaviour
         // 1. 만약 부딪힌 물체가 Bullet이라면
         print(other.gameObject.name);
         print(other.gameObject.name.Contains("Bullet"));
-        if (other.gameObject.name.Contains("Bullet")) {print(1);
+        if (other.gameObject.name.Contains("Bullet")) {
             // 2. 부딪힌 물체를 비활성화
             other.gameObject.SetActive(false);
         }
         // 그렇지 않으면 제거
-        else {print(2);
+        else {
             Destroy(other.gameObject);
         }
 
-        // 나 죽자.
-        Destroy(gameObject);
+        // Destory로 없애는 대신, 비활성화해 풀에 자원을 반납합니다.
+        // Destory(gameObject);
+        gameObject.SetActive(false);
     }
 
     // 충돌 중
