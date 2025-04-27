@@ -1029,8 +1029,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 73e072face49b4a43942690371f87853, type: 3}
+  m_Resource: {fileID: 8300000, guid: 73e072face49b4a43942690371f87853, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1380,6 +1380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   poolSize: 10
+  enemyObjectPool: []
   spawnPoints:
   - {fileID: 2051113862}
   - {fileID: 390759582}
@@ -1998,6 +1999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletFactory: {fileID: 3152102461789733267, guid: 70a439e5c8dbd4d55b25c49465bc5bfa, type: 3}
   poolSize: 10
+  bulletObjectPool: []
   firePosition: {fileID: 698057050}
 --- !u!1 &2051113860
 GameObject:
