@@ -73,11 +73,13 @@ public class Enemy : MonoBehaviour
         
         // 만약 부딪힌 객체가 Bullet인 경우에는 비활성화시켜 탄창에 다시 넣어준다.
         // 1. 만약 부딪힌 물체가 Bullet이라면
-        print(other.gameObject.name);
-        print(other.gameObject.name.Contains("Bullet"));
         if (other.gameObject.name.Contains("Bullet")) {
             // 2. 부딪힌 물체를 비활성화
             other.gameObject.SetActive(false);
+            // PlayerFire 클래스 얻어오기
+            PlayerFire player = GameObject.Find("Player").GetComponent<PlayerFire>();
+            // 리스트에 총알 삽입
+            player.bulletObjectPool.Add(other.gameObject);
         }
         // 그렇지 않으면 제거
         else {
@@ -87,6 +89,9 @@ public class Enemy : MonoBehaviour
         // Destory로 없애는 대신, 비활성화해 풀에 자원을 반납합니다.
         // Destory(gameObject);
         gameObject.SetActive(false);
+
+        // 리스트에 에네미 삽입
+        EnemyManager.Instance.enemyObjectPool.Add(gameObject);
     }
 
     // 충돌 중

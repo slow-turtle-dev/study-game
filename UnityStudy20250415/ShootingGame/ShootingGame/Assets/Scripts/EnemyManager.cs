@@ -1,11 +1,15 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
+    // 싱글턴 객체
+    public static EnemyManager Instance = null;
+
     // 오브젝트 풀 크기
     public int poolSize = 10;
     // 오브젝트 풀 배열
-    GameObject[] enemyObjectPool;
+    public List<GameObject> enemyObjectPool;
     // SpawnPoint들
     public Transform[] spawnPoints;
 
@@ -24,6 +28,13 @@ public class EnemyManager : MonoBehaviour
     // 적 공장
     public GameObject enemyFactory;
 
+    void Awake()
+    {
+        if (Instance == null) {
+            Instance = this;
+        }
+    }
+
     // 1. 태어날 때
     void Start()
     {
@@ -31,13 +42,13 @@ public class EnemyManager : MonoBehaviour
         createTime = UnityEngine.Random.Range(minTime, maxTime);
 
         // 2. 오브젝트 풀을 에너미들을 담을 수 있는 크기로 만들어준다.
-        enemyObjectPool = new GameObject[poolSize];
+        enemyObjectPool = new List<GameObject>();
         // 3. 오브젝트 풀에 넣을 에너미 개수만큼 반복해
         for (int i = 0; i < poolSize; i++) {
             // 4. 에너미 공장에서 에너미를 생성한다.
             GameObject enemy = Instantiate(enemyFactory);
             // 5. 에너미를 오브젝트 풀에 넣고 싶다.
-            enemyObjectPool[i] = enemy;
+            enemyObjectPool.Add(enemy);
             // 비활성화시키자.
             enemy.SetActive(false);
         }
@@ -51,25 +62,18 @@ public class EnemyManager : MonoBehaviour
 
         // 2. 생성 시간이 되었으니까
         if (currentTime > createTime) {
-            // 3. 에너미풀 안에 있는 에너미들 중에서
-            for (int i = 0; i < poolSize; i++) {
-                // 4. 비활성화 된 에너미를
-                // - 만약 에너미가 비활성화 되었다면
-                GameObject enemy = enemyObjectPool[i];
-                if (enemy.activeSelf == false) {
-                    // 에너미 위치시키기
-                    enemy.transform.position = transform.position;
-                    // 5. 에너미를 활성화하고 싶다.
-                    enemy.SetActive(true);
-
-                    // 랜덤으로 인덱스 선택
-                    int index = Random.Range(0, spawnPoints.Length);
-                    // 에너미를 위치시키기
-                    enemy.transform.position = spawnPoints[index].position;
-
-                    // 에너미를 활성화 하였기 때문에 검색 중단
-                    break;
-                }
+            // 3. 오브젝트풀에 에너미가 있다면
+            if (enemyObjectPool.Count > 0) {
+                // 오브젝트풀에서 enemy를 가져다 사용하도록 한다.
+                GameObject enemy = enemyObjectPool[0];
+                // 오브젝트풀에서 에너미 제거
+                enemyObjectPool.Remove(enemy);
+                // 랜덤으로 인덱스 선택
+                int index = Random.Range(0, spawnPoints.Length);
+                // 에너미 위치시키기
+                enemy.transform.position = spawnPoints[index].position;
+                // 에너미를 활성화하고 싶다.
+                enemy.SetActive(true);
             }
 
             // 적을 생성한 후 적의 생성 시간을 다시 설정하고 싶다.
