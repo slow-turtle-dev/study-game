@@ -1,0 +1,5 @@
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/.utmp/RelWithDebInfo/2f6n2z6j/arm64-v8a/CMakeFiles/edit_cache.dir
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/.utmp/RelWithDebInfo/2f6n2z6j/arm64-v8a/CMakeFiles/rebuild_cache.dir
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/.utmp/RelWithDebInfo/2f6n2z6j/arm64-v8a/GameActivity/CMakeFiles/game.dir
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/.utmp/RelWithDebInfo/2f6n2z6j/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/.utmp/RelWithDebInfo/2f6n2z6j/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir

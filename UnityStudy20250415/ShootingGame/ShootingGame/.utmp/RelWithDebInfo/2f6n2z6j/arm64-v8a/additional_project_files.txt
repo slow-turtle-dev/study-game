@@ -1,0 +1,17 @@
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/GAToUnityCallbacks.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/MacroEnd.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/MacroHeaderBegin.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/MacroSourceBegin.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGAApplication.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGAConfiguration.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGADebug.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGAEvents.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGAInput.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGASoftKeyboard.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGASoftKeyboardCallbacks.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGATypes.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UGAVersion.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UnityToGACallbacks.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UnityToGAConfigurationCallbacks.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UnityToGAKeyEventCallbacks.h
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/UnityToGAMotionEventCallbacks.h

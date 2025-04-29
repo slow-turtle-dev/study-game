@@ -1,0 +1,2 @@
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt
+/Users/sanggyu/Desktop/git_workspace_me/study-game/UnityStudy20250415/ShootingGame/ShootingGame/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/CMakeLists.txt
