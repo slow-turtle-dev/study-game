@@ -5,6 +5,9 @@ public class BombAction : MonoBehaviour
     // 폭발 이펙트 프리팹 변수
     public GameObject bombEffect;
 
+    // 피격 이펙트 파티클 시스템
+    ParticleSystem ps;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,7 +28,9 @@ public class BombAction : MonoBehaviour
 
         // 이펙트 프리팹의 위치는 수류탄 오브젝트 자신의 위치와 동일하다.
         eff.transform.position = transform.position;
-        
+
+        //ps.Play();
+
         // 자기 자신을 제거한다.
         Destroy(gameObject);
     }
