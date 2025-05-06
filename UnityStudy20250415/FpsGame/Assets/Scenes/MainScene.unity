@@ -690,7 +690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePosition: {fileID: 255894224}
-  bombFactory: {fileID: 6274008639508308593, guid: 2504e891cda1a4ac28103dfbfd079a9f, type: 3}
+  bombFactory: {fileID: 754289571958129030, guid: 5d12ecd1c01594d13beecc01d2767089, type: 3}
   throwPower: 15
 --- !u!1 &1010327922
 GameObject:
