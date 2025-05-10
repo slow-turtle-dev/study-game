@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -13,7 +15,17 @@ public class PlayerMove : MonoBehaviour
     // 점프 상태 변수
     public bool isJumping = false;
 
+    // 플레이어 체력 변수
     public int hp = 20;
+
+    // 최대 체력 변수
+    int maxHp = 20;
+
+    // hp 슬라이더 변수
+    public Slider hpSlider;
+
+    // Hit 효과 오브젝트
+    public GameObject hitEffect;
 
     // 캐릭터 콘트롤러 변수
     CharacterController cc;
@@ -67,11 +79,32 @@ public class PlayerMove : MonoBehaviour
         // 3. 이동 속도에 맞춰 이동한다.
         // p = pO + vt
         cc.Move(dir * moveSpeed * Time.deltaTime);
+
+        // 4. 현재 플레이어 hp(%)를 hp 슬라이더의 value에 반영한다.
+        hpSlider.value = (float)hp / (float)maxHp;
     }
 
     // 플레이어의 피격 함수
     public void DamageAction(int damage) {
         // 에너미의 공격력만큼 플레이어의 체력을 깎는다.
         hp -= damage;
+
+        // 만일, 플레이어의 체력이 0보다 크면 피격 효과를 출력한다.
+        if (hp > 0) {
+            // 피격 이펙트 코루틴을 시작한다.
+            StartCoroutine(PlayHitEffect());
+        }
+    }
+
+    // 피격 효과 코루틴 함수
+    IEnumerator PlayHitEffect() {
+        // 1. 피격 UI를 활성화한다.
+        hitEffect.SetActive(true);
+
+        // 2. 0.3초간 대기한다.
+        yield return new WaitForSeconds(0.3f);
+
+        // 3. 피격 UI를 비활성화한다.
+        hitEffect.SetActive(false);
     }
 }
