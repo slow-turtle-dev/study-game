@@ -40,6 +40,9 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 현재 플레이어 hp(%)를 hp 슬라이더의 value에 반영한다.
+        hpSlider.value = (float)hp / (float)maxHp;
+
         // 게임 상태가 '게임 중' 상태일 때만 조작할 수 있게 한다.
         if (GameManager.gm.gState != GameManager.GameState.Run) {
             return;
@@ -84,9 +87,6 @@ public class PlayerMove : MonoBehaviour
         // 3. 이동 속도에 맞춰 이동한다.
         // p = pO + vt
         cc.Move(dir * moveSpeed * Time.deltaTime);
-
-        // 4. 현재 플레이어 hp(%)를 hp 슬라이더의 value에 반영한다.
-        hpSlider.value = (float)hp / (float)maxHp;
     }
 
     // 플레이어의 피격 함수
