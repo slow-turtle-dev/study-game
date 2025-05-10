@@ -40,6 +40,11 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // 게임 상태가 '게임 중' 상태일 때만 조작할 수 있게 한다.
+        if (GameManager.gm.gState != GameManager.GameState.Run) {
+            return;
+        }
+        
         // w, a, s, d 키를 누르면 입력하면 캐릭터를 그 방향으로 이동시키고 싶다.
         // spacebar 키를 누르면 캐릭터를 수직으로 점프시키고 싶다.
 
