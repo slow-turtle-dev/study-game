@@ -60,6 +60,9 @@ public class GameManager : MonoBehaviour
     {
         // 만일, 플레이어의 hp가 0 이하라면...
         if (playerMove.hp <= 0) {
+            // 플레이어의 애니메이션을 멈춘다.
+            playerMove.GetComponentInChildren<Animator>().SetFloat("MoveMotion", 0f);
+            
             // 상태 텍스트를 활성화한다.
             gameLabel.SetActive(true);
             // 상태 텍스트의 내용을 'Game Over'로 한다.

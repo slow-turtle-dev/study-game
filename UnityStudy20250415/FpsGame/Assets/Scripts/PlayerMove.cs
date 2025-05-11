@@ -30,11 +30,17 @@ public class PlayerMove : MonoBehaviour
     // 캐릭터 콘트롤러 변수
     CharacterController cc;
 
+    // 애니메이터 변수
+    Animator anim;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         // 캐릭터 콘트롤러 컴포넌트 받아오기
         cc = GetComponent<CharacterController>();
+
+        // 애니메이터 받아오기
+        anim = GetComponentInChildren<Animator>();
     }
 
     // Update is called once per frame
@@ -58,6 +64,9 @@ public class PlayerMove : MonoBehaviour
         // 2. 이동 방향을 설정한다.
         Vector3 dir = new Vector3(h, 0, v);
         dir = dir.normalized;
+
+        // 이동 블랜딩 트리를 호출하고 벡터의 크기 값을 넘겨준다.
+        anim.SetFloat("MoveMotion", dir.magnitude);
 
         // 2-1 메인 카메라를 기준으로 방향을 변환한다.
         dir = Camera.main.transform.TransformDirection(dir);
