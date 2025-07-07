@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,9 +9,11 @@ public class GameManager : MonoBehaviour
     public static GameManager gm;
 
     // 게임 상태 상수
-    public enum GameState {
+    public enum GameState
+    {
         Ready,
         Run,
+        Pause,
         GameOver
     }
 
@@ -20,6 +23,9 @@ public class GameManager : MonoBehaviour
     // 게임 상태 UI 오브젝트 변수
     public GameObject gameLabel;
 
+    // 옵션 화면 UI 오브젝트 변수
+    public GameObject gameOption;
+
     // 게임 상태 UI 텍스트 컴포넌트 변수
     Text gameText;
 
@@ -28,7 +34,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (gm == null) {
+        if (gm == null)
+        {
             gm = this;
         }
     }
@@ -59,10 +66,11 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // 만일, 플레이어의 hp가 0 이하라면...
-        if (playerMove.hp <= 0) {
+        if (playerMove.hp <= 0)
+        {
             // 플레이어의 애니메이션을 멈춘다.
             playerMove.GetComponentInChildren<Animator>().SetFloat("MoveMotion", 0f);
-            
+
             // 상태 텍스트를 활성화한다.
             gameLabel.SetActive(true);
             // 상태 텍스트의 내용을 'Game Over'로 한다.
@@ -76,7 +84,8 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator ReadyToStart() {
+    IEnumerator ReadyToStart()
+    {
         // 2초간 대기한다.
         yield return new WaitForSeconds(2f);
 
@@ -91,5 +100,43 @@ public class GameManager : MonoBehaviour
 
         // 상태를 '게임 중' 상태로 변경한다.
         gState = GameState.Run;
+    }
+
+    // 옵션 화면 켜기
+    public void OpenOptionWindow()
+    {
+        // 옵션 창을 활성화한다.
+        gameOption.SetActive(true);
+        // 게임 속도를 0배속으로 전환한다.
+        Time.timeScale = 0f;
+        // 게임 상태를 일시 정지 상태로 변경한다.
+        gState = GameState.Pause;
+    }
+
+    // 계속하기 옵션
+    public void CloseOptionWindow()
+    {
+        // 옵션 창을 비활성화한다.
+        gameOption.SetActive(false);
+        // 게임 속도를 1배속으로 전환한다.
+        Time.timeScale = 1f;
+        // 게임 상태를 게임 중 상태로 변경한다.
+        gState = GameState.Run;
+    }
+
+    // 다시하기 옵션
+    public void RestartGame()
+    {
+        // 게임 속도를 1배속으로 전환한다.
+        Time.timeScale = 1f;
+        // 현재 씬 번호를 다시 로드한다.
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    // 게임 종료 옵션
+    public void QuitGame()
+    {
+        // 애플리케이션을 종료한다.
+        Application.Quit();
     }
 }
