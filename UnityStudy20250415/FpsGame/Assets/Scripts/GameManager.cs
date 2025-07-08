@@ -73,12 +73,19 @@ public class GameManager : MonoBehaviour
 
             // 상태 텍스트를 활성화한다.
             gameLabel.SetActive(true);
+
             // 상태 텍스트의 내용을 'Game Over'로 한다.
             gameText.text = "Game Over";
 
             // 상태 텍스트의 색상을 붉은색으로 한다.
             gameText.color = new Color32(255, 0, 0, 255);
 
+            // 상태 텍스트의 자식 오브젝트의 트랜스폼 컴포넌트를 가져온다.
+            Transform buttons = gameText.transform.GetChild(0);
+
+            // 버튼 오브젝트를 활성화한다.
+            buttons.gameObject.SetActive(true);
+            
             // 상태를 '게임 오버' 상태로 변경한다.
             gState = GameState.GameOver;
         }
